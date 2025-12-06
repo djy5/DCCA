@@ -12,7 +12,6 @@ from timm import create_model
 from timm.models.layers import DropPath, trunc_normal_
 from models.cd_modules import Decoder
 from models.DCT import *
-#from models.Fusion import *
 from models.CGILM import *
 from models.DF import *
 
@@ -127,5 +126,6 @@ class mymodel(nn.Module):
         C1 = self.cgil1(CAT3)  # torch.Size([1, 64, 64, 64])
 
         pred = self.decoder(C1)  # torch.Size([1, 1, 256, 256])
+
 
         return pred
